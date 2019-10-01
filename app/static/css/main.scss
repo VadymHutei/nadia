@@ -1,0 +1,18 @@
+html {}
+body {}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main {
+    .slider {
+        .gallery-slide {
+            max-width: 800px;
+            img {
+                width: 100%;
+            }
+        }
+    }    
+}
+footer {}
