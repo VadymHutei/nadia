@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Свадебный фотограф Надежда Гутей</title>
-</head>
-<body>
-Свадебный фотограф Надежда Гутей
-</body>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Свадебный фотограф Надежда Гутей</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+        <link rel="stylesheet" href="/static/css/tiny-slider.css">
+        <script src="/static/js/min/tiny-slider.js"></script>
+    </head>
+
+    <body>
+
+        <header>
+            <h1>СВАДЕБНЫЙ ФОТОГРАФ</h1>
+            <nav>
+                <a href="#about">обо мне</a>
+                <a href="/gallery/">работы</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="slider">
+                <div class="tns">
+                    <div class="gallery-slide">
+                        <img src="/static/gallery/Иван и Виктория LoveStory/Одесса2019-2.jpg">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="/static/gallery/Настя и Саша свадьба/Саша_и_Настя_Гостерия_20.jpg">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="/static/gallery/Свидание на крыше/DSC_2228.jpg">
+                    </div>
+                </div>
+            </section>
+            <section class="about_me"></section>
+            <section class="instagram"></section>
+            <section class="how_i_work"></section>
+            <section class="contacts"></section>
+        </main>
+
+        <footer></footer>
+
+        <script>
+            var slider = tns({
+                container: '.tns',
+                mode: 'gallery',
+                controls: false,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayButtonOutput: false,
+                arrowKeys: true,
+                mouseDrag: true
+            });
+        </script>
+
+    </body>
 </html>
