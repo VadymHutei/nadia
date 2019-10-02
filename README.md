@@ -1,5 +1,6 @@
 # NADIA PHOTOGRAPHER
 
+## developing
 ```
 git clone https://github.com/VadymHutei/nadia.git
 cd nadia/app
@@ -10,7 +11,17 @@ export FLASK_APP=main.py
 export FLASK_ENV=development
 flask run --host=0.0.0.0 --port=5000
 ```
+
+## deployment
 ```
+# server
+cd /home
+git clone https://github.com/VadymHutei/nadia.git
+
+# localhost
+scp -r gallery root@photo.hutei.net:/home/nadia/app/static
+
+# server
 docker build -t nadia .
-docker run -d --restart always --name nadia -p 80:80 nadia
+docker run -d --restart always --name nadia -p 80:80 -v /home/nadia/gallery:/app/static/gallery nadia
 ```
