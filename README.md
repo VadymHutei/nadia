@@ -10,3 +10,7 @@ export FLASK_APP=main.py
 export FLASK_ENV=development
 flask run --host=0.0.0.0 --port=5000
 ```
+```
+docker build -t nadia .
+docker run -d --restart always --name nadia -p 80:80 nadia
+```
