@@ -13,30 +13,47 @@
     <body>
 
         <header>
-            <h1>СВАДЕБНЫЙ ФОТОГРАФ</h1>
-            <nav>
-                <a href="#about">обо мне</a>
-                <a href="/gallery/">работы</a>
+            <div class="title_block">
+                <span class="title">СВАДЕБНЫЙ ФОТОГРАФ</span>
+            </div>
+            <nav class="menu">
+                <a href="#about">
+                    <div class="item">
+                        <span>обо мне</span>
+                    </div>
+                </a>
+                <a href="/gallery/">
+                    <div class="item">
+                        <span>работы</span>
+                    </div>
+                </a>
+                <a href="#contacts">
+                    <div class="item">
+                        <span>контакты</span>
+                    </div>
+                </a>
             </nav>
         </header>
 
         <main>
-            <section class="slider">
-                <div class="tns">
-                    <div class="gallery-slide">
-                        <img src="/static/gallery/Иван и Виктория LoveStory/Одесса2019-2.jpg">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="/static/gallery/Настя и Саша свадьба/Саша_и_Настя_Гостерия_20.jpg">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="/static/gallery/Свидание на крыше/DSC_2228.jpg">
+            <section class="gallery">
+                <div class="slider">
+                    <div class="tns">
+                        <div class="gallery-slide">
+                            <img src="/static/gallery/Иван и Виктория LoveStory/Одесса2019-2.jpg">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="/static/gallery/Настя и Саша свадьба/Саша_и_Настя_Гостерия_20.jpg">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="/static/gallery/Свидание на крыше/DSC_2228.jpg">
+                        </div>
                     </div>
                 </div>
-                <a href="/gallery/">Все работы</a>
+                <a class="gallery_link" href="/gallery/">Все работы &rarr;</a>
             </section>
             <section id="about" class="about_me">
-                <h2>Обо мне</h2>
+                <h2 class="title">Обо мне</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -46,7 +63,7 @@
             </section>
             <!-- <section class="instagram"></section> -->
             <section class="how_i_work">
-                <h2>Как я работаю</h2>
+                <h2 class="title">Как я работаю</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -54,12 +71,23 @@
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </section>
-            <section class="contacts">
-                <a href="https://t.me/hutei_photo">telegram</a>
+            <section id="contacts" class="contacts">
+                <h2 class="title">Контакты</h2>
+                <address>
+                    <a href="tel:+380990217490">+380 (99) 021-74-90</a>
+                    <a class="social_logo_link" href="https://t.me/hutei_photo">
+                        <img class="social_logo" src="/static/images/telegram_logo.png?h=20" alt="Telegram" title="Telegram">
+                    </a>
+                    <a class="social_logo_link" href="viber://chat?number=+380990217490">
+                        <img class="social_logo" src="/static/images/viber_logo.png?h=20" alt="Viber" title="Viber">
+                    </a>
+                </address>
             </section>
         </main>
 
-        <footer></footer>
+        <footer>
+            <span class="copyright">&copy; Надежда Гутей 2019</span>
+        </footer>
 
         <script>
             var slider = tns({

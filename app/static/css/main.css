@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+body, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+html {
+  font-family: 'Roboto', sans-serif; }
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,9 +15,67 @@ header {
           flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em auto;
+  width: 100%;
+  max-width: 80em; }
+  header .title_block .title {
+    font-size: 2em; }
+  header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    header .menu .item {
+      padding: 1em; }
 
-main .slider .gallery-slide {
-  height: 300px; }
-  main .slider .gallery-slide img {
-    max-height: 100%; }
+main .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  main .gallery .slider {
+    margin: 2em 0; }
+    main .gallery .slider .gallery-slide {
+      height: 30em; }
+      main .gallery .slider .gallery-slide img {
+        max-height: 100%; }
+  main .gallery .gallery_link {
+    font-size: 2em;
+    color: black; }
+main .contacts .social_logo_link {
+  text-decoration: none;
+  vertical-align: middle; }
+  main .contacts .social_logo_link .social_logo {
+    display: inline-block;
+    height: 1.5em; }
+
+footer {
+  margin: 2em;
+  text-align: center; }
+  footer .copyright {
+    font-size: 0.8em;
+    color: darkgray; }
+
+section {
+  margin: 0 auto 2em;
+  padding: 0 0 3em;
+  width: 100%;
+  max-width: 80em;
+  border-bottom: 1px solid lightgray; }
+  section .title {
+    margin: 0 0 1em;
+    font-size: 1.5em;
+    font-weight: normal; }
