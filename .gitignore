@@ -1,4 +1,4 @@
-app/gallery/
+app/static/gallery/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
