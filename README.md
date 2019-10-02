@@ -17,6 +17,8 @@ flask run --host=0.0.0.0 --port=5000
 # server
 cd /home
 git clone https://github.com/VadymHutei/nadia.git
+cd ./nadia
+chmod +x rebuild.sh
 
 # localhost
 scp -r gallery root@photo.hutei.net:/home/nadia/app/static
