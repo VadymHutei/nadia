@@ -58,6 +58,26 @@ main {
             }
         }
     }
+    .galleries {
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            font: {
+                size: 1em;
+                weight: normal;
+            }
+        }
+        display: flex;
+        flex-flow: row wrap;
+        .gallery {
+            padding: 1em;
+            width: 10em;
+            .thumbnail {
+                width: 100%;
+            }
+        }
+    }
 }
 footer {
     margin: 2em;

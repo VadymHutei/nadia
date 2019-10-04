@@ -61,6 +61,24 @@ main .contacts .social_logo_link {
   main .contacts .social_logo_link .social_logo {
     display: inline-block;
     height: 1.5em; }
+main .galleries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
+  main .galleries h1 {
+    font-size: 2em; }
+  main .galleries h2 {
+    font-size: 1em;
+    font-weight: normal; }
+  main .galleries .gallery {
+    padding: 1em;
+    width: 10em; }
+    main .galleries .gallery .thumbnail {
+      width: 100%; }
 
 footer {
   margin: 2em;
