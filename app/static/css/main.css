@@ -35,7 +35,7 @@ header {
     header .menu .item {
       padding: 1em; }
 
-main .gallery {
+main .examples {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,13 +46,13 @@ main .gallery {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-  main .gallery .slider {
+  main .examples .slider {
     margin: 2em 0; }
-    main .gallery .slider .gallery-slide {
+    main .examples .slider .example {
       height: 30em; }
-      main .gallery .slider .gallery-slide img {
+      main .examples .slider .example img {
         max-height: 100%; }
-  main .gallery .gallery_link {
+  main .examples .galleries_link {
     font-size: 2em;
     color: black; }
 main .contacts .social_logo_link {

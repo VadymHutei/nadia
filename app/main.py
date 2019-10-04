@@ -6,9 +6,9 @@ app = Flask(__name__)
 def hello():
     return render_template('main.html')
 
-@app.route('/gallery/')
-def gallery():
-    return 'gallery'
+@app.route('/galleries/')
+def galleries():
+    return render_template('galleries.html')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=False, port=80)
+    app.run(host='0.0.0.0', debug=True, port=5000)

@@ -30,20 +30,20 @@ header {
     }
 }
 main {
-    .gallery {
+    .examples {
         display: flex;
         flex-direction: column;
         align-items: center;
         .slider {
             margin: 2em 0;
-            .gallery-slide {
+            .example {
                 height: 30em;
                 img {
                     max-height: 100%;
                 }
             }
         }
-        .gallery_link {
+        .galleries_link {
             font-size: 2em;
             color: black;
         }

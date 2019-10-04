@@ -21,9 +21,9 @@ cd ./nadia
 chmod +x rebuild.sh
 
 # localhost
-scp -r gallery root@photo.hutei.net:/home/nadia/app/static
+scp -r galleries root@photo.hutei.net:/home/nadia/app/static
 
 # server
 docker build -t nadia .
-docker run -d --restart always --name nadia -p 80:80 -v /home/nadia/gallery:/app/static/gallery nadia
+docker run -d --restart always --name nadia -p 80:80 -v /home/nadia/galleries:/app/static/galleries nadia
 ```
