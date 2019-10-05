@@ -61,6 +61,3 @@ def images(path):
         return send_from_directory(rsz_directory, rsz_image)
     else:
         abort(404)
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, port=5000)
