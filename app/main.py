@@ -13,10 +13,10 @@ def hello():
 def galleries():
     return render_template('galleries.html')
 
-@app.route('/static/galleries/<path:path>')
+@app.route('/galleries/<path:path>')
 def images(path):
     print('START')
-    path = p.join('static', 'galleries', path)
+    path = p.join('galleries', path)
     image = p.basename(path)
     directory = p.dirname(path)
     image_l = image.split('.')
