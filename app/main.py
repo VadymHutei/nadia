@@ -1,5 +1,5 @@
 import os.path as p
-from os import makedirs, chmod
+from os import makedirs
 from PIL import Image
 from flask import Flask, render_template, abort, request, send_from_directory
 
@@ -15,6 +15,7 @@ def galleries():
 
 @app.route('/static/galleries/<path:path>')
 def images(path):
+    print('START')
     path = p.join('static', 'galleries', path)
     image = p.basename(path)
     directory = p.dirname(path)
@@ -22,15 +23,17 @@ def images(path):
     image_ext = image_l[-1]
     image_name = '.'.join(image_l[:-1])
     if not p.exists(path): abort(400)
+    print('CP 1')
     width = request.args.get('w', None)
     height = request.args.get('h', None)
     if width is None and height is None:
         return send_from_directory(directory, image)
+    print('CP 2')
     rsz_directory = p.join(directory, 'rsz')
     if not p.exists(rsz_directory):
         print('CREATING DIRECTORY ' + rsz_directory)
         makedirs(rsz_directory)
-        chmod(rsz_directory, 777)
+    print('CP 3')
     rsz_image_name = image_name
     if width is not None and width.isdigit():
         rsz_image_name += '_w' + width
@@ -40,6 +43,7 @@ def images(path):
     rsz_path = p.join(rsz_directory, rsz_image)
     if p.exists(rsz_path):
         return send_from_directory(rsz_directory, rsz_image)
+    print('CP 4')
     orig_img = Image.open(path)
     w, h = orig_img.size
     if width and height:
@@ -50,6 +54,7 @@ def images(path):
         max_size = (w, int(height))
     else:
         abort(400)
+    print('CP 5')
     orig_img.thumbnail(max_size, Image.ANTIALIAS)
     orig_img.save(rsz_path)
     if p.exists(rsz_path):
@@ -58,4 +63,4 @@ def images(path):
         abort(404)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=False, port=80)
+    app.run(host='0.0.0.0', debug=True, port=5000)
