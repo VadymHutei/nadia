@@ -25,11 +25,47 @@ def galleries():
             galleries.append({
                 'name': gallery_name,
                 'link': '/' + gallery_path,
+                'thumbnail': '/img/' + photo_path + '?h=280'
+            })
+    return render_template('galleries.html', galleries=galleries)
+
+@app.route('/galleries/<path:gallery_name>')
+def gallery(gallery_name):
+    gallery_path = p.join('galleries', gallery_name)
+    if not p.exists(gallery_path): abort(404)
+    gallery = {
+        'name': gallery_name,
+        'photos': []
+    }
+    photos_list = listdir(gallery_path)
+    for photo in photos_list:
+        photo_path = p.join(gallery_path, photo)
+        if not p.isfile(photo_path): continue
+        gallery['photos'].append({
+            'title': photo,
+            'src': '/img/' + photo_path + '?h=280'
+        })
+    return render_template('gallery.html', gallery=gallery)
+    return str(photos)
+
+    galleries_names = listdir('galleries')
+    for gallery_name in galleries_names:
+        gallery_path = p.join('galleries', gallery_name)
+        photos = listdir(gallery_path)
+        if photos:
+            for i in range(3):
+                photo = choice(photos)
+                photo_path = p.join(gallery_path, photo)
+                if p.isfile(photo_path):
+                    break
+            galleries.append({
+                'name': gallery_name,
+                'link': '/' + gallery_path,
                 'thumbnail': '/' + photo_path + '?h=280'
             })
     return render_template('galleries.html', galleries=galleries)
 
-@app.route('/galleries/<path:path>')
+@app.route('/img/galleries/<path:path>')
 def images(path):
     path = p.join('galleries', path)
     image = p.basename(path)
