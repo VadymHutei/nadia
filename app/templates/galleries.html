@@ -15,6 +15,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Галерея - Свадебный фотограф Надежда Гутей</title>
+        <link rel="shortcut icon" type="image/png" href="/static/images/favicon.png">
         <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     </head>
 
@@ -29,7 +30,7 @@
             <section class="galleries">
                 {% for gallery in galleries %}
                 <div class="gallery">
-                    <a href="{{ gallery.name }}}">
+                    <a href="{{ gallery.name }}">
                         <img class="thumbnail" src="{{ gallery.thumbnail }}">
                         <h2>{{ gallery.name }}</h2>
                     </a>
