@@ -1,5 +1,5 @@
 import os.path as p
-from os import makedirs
+from os import makedirs, chmod
 from PIL import Image
 from flask import Flask, render_template, abort, request, send_from_directory
 
@@ -30,6 +30,7 @@ def images(path):
     if not p.exists(rsz_directory):
         print('CREATING DIRECTORY ' + rsz_directory)
         makedirs(rsz_directory)
+        chmod(rsz_directory, 777)
     rsz_image_name = image_name
     if width is not None and width.isdigit():
         rsz_image_name += '_w' + width
