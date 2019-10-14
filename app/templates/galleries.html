@@ -22,11 +22,29 @@
     <body>
 
         <header>
-
+            <div class="title_block">
+                <span class="title">СВАДЕБНЫЙ ФОТОГРАФ</span>
+            </div>
+            <nav class="menu">
+                <a href="/#about">
+                    <div class="item">
+                        <span>обо мне</span>
+                    </div>
+                </a>
+                <a href="/galleries/">
+                    <div class="item">
+                        <span>работы</span>
+                    </div>
+                </a>
+                <a href="/#contacts">
+                    <div class="item">
+                        <span>контакты</span>
+                    </div>
+                </a>
+            </nav>
         </header>
 
         <main>
-            <h1>Галерея</h1>
             <section class="galleries">
                 {% for gallery in galleries %}
                 <div class="gallery">

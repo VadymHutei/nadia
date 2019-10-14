@@ -1,5 +1,4 @@
 from os import makedirs, listdir, path as p
-from random import choice
 from PIL import Image
 from flask import Flask, render_template, abort, request, send_from_directory
 
@@ -16,17 +15,14 @@ def galleries():
     for gallery_name in galleries_names:
         gallery_path = p.join('galleries', gallery_name)
         photos = listdir(gallery_path)
-        if photos:
-            for i in range(3):
-                photo = choice(photos)
-                photo_path = p.join(gallery_path, photo)
-                if p.isfile(photo_path):
-                    break
-            galleries.append({
-                'name': gallery_name,
-                'link': '/' + gallery_path,
-                'thumbnail': '/img/' + photo_path + '?h=280'
-            })
+        if not photos: continue
+        if 'thumbnail.jpg' not in photos: continue
+        thumbnail_path = p.join('img', gallery_path, 'thumbnail.jpg?h=280')
+        galleries.append({
+            'name': gallery_name,
+            'link': '/' + gallery_path,
+            'thumbnail': '/' + thumbnail_path
+        })
     return render_template('galleries.html', galleries=galleries)
 
 @app.route('/galleries/<path:gallery_name>')
@@ -43,27 +39,9 @@ def gallery(gallery_name):
         if not p.isfile(photo_path): continue
         gallery['photos'].append({
             'title': photo,
-            'src': '/img/' + photo_path + '?h=280'
+            'src': '/img/' + photo_path + '?w=280'
         })
     return render_template('gallery.html', gallery=gallery)
-    return str(photos)
-
-    galleries_names = listdir('galleries')
-    for gallery_name in galleries_names:
-        gallery_path = p.join('galleries', gallery_name)
-        photos = listdir(gallery_path)
-        if photos:
-            for i in range(3):
-                photo = choice(photos)
-                photo_path = p.join(gallery_path, photo)
-                if p.isfile(photo_path):
-                    break
-            galleries.append({
-                'name': gallery_name,
-                'link': '/' + gallery_path,
-                'thumbnail': '/' + photo_path + '?h=280'
-            })
-    return render_template('galleries.html', galleries=galleries)
 
 @app.route('/img/galleries/<path:path>')
 def images(path):
